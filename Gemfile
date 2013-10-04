@@ -7,8 +7,7 @@ gem 'rails', '4.0.0'
 
 gem 'rails-api'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 
 
 # To use ActiveModel has_secure_password
