@@ -40,8 +40,17 @@ GEM
     bson (2.0.0.rc2)
     builder (3.1.4)
     erubis (2.7.0)
+    has_scope (0.6.0.rc)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     hike (1.2.3)
     i18n (0.6.5)
+    inherited_resources (1.4.1)
+      has_scope (~> 0.6.0.rc)
+      responders (~> 1.0.0.rc)
+    jbuilder (1.5.1)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -75,6 +84,8 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
+    responders (1.0.0)
+      railties (>= 3.2, < 5)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -97,6 +108,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  inherited_resources (~> 1.4.0)
+  jbuilder (~> 1.5.1)
   mongoid!
   rails (= 4.0.0)
   rails-api
+  responders (~> 1.0.0)
