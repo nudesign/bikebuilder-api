@@ -17,6 +17,7 @@ group :development do
   # Guard
   gem 'guard',       '~> 1.8.1'
   gem 'guard-rspec', '~> 3.1.0'
+  gem 'spork-rails', github: 'sporkrb/spork-rails' # add support for Rails 4
   gem 'guard-spork', '~> 1.5.1'
   gem 'rb-fsevent',  '~> 0.9.0'
 
