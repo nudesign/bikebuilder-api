@@ -11,3 +11,31 @@ gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'jbuilder', '~> 1.5.1'
 
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
+
+
+group :development do
+  # Guard
+  gem 'guard',       '~> 1.8.1'
+  gem 'guard-rspec', '~> 3.1.0'
+  gem 'guard-spork', '~> 1.5.1'
+  gem 'rb-fsevent',  '~> 0.9.0'
+
+  # Guard LiveReload
+  gem 'guard-livereload', '~> 1.4.0'
+  gem 'rack-livereload',  '~> 0.3.0'
+  gem 'yajl-ruby',        '~> 1.1.0'
+
+  # Guard notifiers
+  gem 'growl',            '~> 1.0.0' # growl
+end
+
+group :development, :test do
+  gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'rspec-rails',        '~> 2.14.0'
+end
+
+group :test do
+  gem 'database_cleaner', '~> 1.1.1'
+  gem 'shoulda-matchers', '~> 2.2.0'
+  gem 'simplecov',        '~> 0.7.0', require: false
+end
