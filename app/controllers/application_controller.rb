@@ -6,10 +6,15 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_default_response_format
 
-  protected
+  helper_method :current_user
 
+  protected
     def set_default_response_format
       request.format = :json if params[:format].nil?
     end
 
+  private
+    def current_user
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
 end

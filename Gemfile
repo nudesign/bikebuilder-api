@@ -11,6 +11,7 @@ gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'jbuilder', '~> 1.5.1'
 
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'omniauth-facebook', '~> 1.4.1'
 
 
 group :development do
