@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  host: localhost
+  port: 5432
+  pool: 5
+  username: rodrigop
+
+development:
+  <<: *default
+  database: bikebuilder_development
+
+test:
+  <<: *default
+  database: bikebuilder_test

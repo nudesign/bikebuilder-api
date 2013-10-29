@@ -1,12 +1,9 @@
-class Build
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Build < ActiveRecord::Base
 
   # Fields
-  field :name
+  # field :name
 
   # Relations
-  belongs_to :type, class_name: 'BuildType', inverse_of: 'build'
+  belongs_to :type, class_name: 'BuildType'
   has_and_belongs_to_many :components
-
 end
