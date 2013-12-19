@@ -1,12 +1,5 @@
 class User < ActiveRecord::Base
 
-  # field :provider,         type: String
-  # field :uid,              type: String
-  # field :name,             type: String
-  # field :avatar,           type: String
-  # field :oauth_token,      type: String
-  # field :oauth_expires_at, type: Time
-
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider         = auth.provider
@@ -18,4 +11,5 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+
 end
