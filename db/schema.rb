@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20131219172529) do
 
   add_index "component_types", ["primary"], name: "index_component_types_on_primary", using: :btree
 
-  create_table "componets", force: true do |t|
+  create_table "components", force: true do |t|
     t.string  "model"
     t.string  "cost"
     t.string  "weight"
@@ -62,10 +62,10 @@ ActiveRecord::Schema.define(version: 20131219172529) do
     t.integer "componet_type_id"
   end
 
-  add_index "componets", ["componet_type_id"], name: "index_componets_on_componet_type_id", using: :btree
-  add_index "componets", ["manufacturer_id"], name: "index_componets_on_manufacturer_id", using: :btree
+  add_index "components", ["componet_type_id"], name: "index_components_on_componet_type_id", using: :btree
+  add_index "components", ["manufacturer_id"], name: "index_components_on_manufacturer_id", using: :btree
 
-  create_table "manufactures", force: true do |t|
+  create_table "manufacturers", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
