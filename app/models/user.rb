@@ -1,13 +1,11 @@
-class User
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class User < ActiveRecord::Base
 
-  field :provider,         type: String
-  field :uid,              type: String
-  field :name,             type: String
-  field :avatar,           type: String
-  field :oauth_token,      type: String
-  field :oauth_expires_at, type: Time
+  # field :provider,         type: String
+  # field :uid,              type: String
+  # field :name,             type: String
+  # field :avatar,           type: String
+  # field :oauth_token,      type: String
+  # field :oauth_expires_at, type: Time
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|

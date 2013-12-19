@@ -50,12 +50,13 @@ Spork.prefork do
     # Database Cleaner
     config.before(:suite) do
       DatabaseCleaner.strategy = :truncation
-      DatabaseCleaner.clean_with(:truncation)
+      # DatabaseCleaner.clean_with(:truncation) # for Mongoid
     end
 
-    config.after(:suite) do
-      Mongoid.default_session.drop
-    end
+    # Mongoid config
+    # config.after(:suite) do
+    #   Mongoid.default_session.drop
+    # end
 
     config.before(:each) do
       DatabaseCleaner.start

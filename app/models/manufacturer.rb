@@ -1,11 +1,8 @@
-class Manufacturer
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Manufacturer < ActiveRecord::Base
 
   # Fields
-  field :name
+  # field :name
 
   # Relations
   has_many :components
-
 end
