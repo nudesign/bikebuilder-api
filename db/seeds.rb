@@ -103,18 +103,18 @@ city_component_types = [
 
 road_component_types.each do |name|
   ct = ComponentType.find_or_create_by(name: name)
-  puts "ComponentType #{name} added to Road Bike." if road.components << ct
+  puts "ComponentType #{name} added to Road Bike." if road.component_types << ct
 end
 road.save
 
 fixie_component_types.each do |name|
   ct = ComponentType.find_or_create_by(name: name)
-  puts "ComponentType #{name} added to Fixed Gear Bike." if fixie.components << ct
+  puts "ComponentType #{name} added to Fixed Gear Bike." if fixie.component_types << ct
 end
 fixie.save
 
 city_component_types.each do |name|
   ct = ComponentType.find_or_create_by(name: name)
-  puts "ComponentType #{name} added to City Bike." if city.components << ct
+  puts "ComponentType #{name} added to City Bike." if city.component_types << ct
 end
 city.save

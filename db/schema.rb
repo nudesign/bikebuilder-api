@@ -56,13 +56,13 @@ ActiveRecord::Schema.define(version: 20131219172529) do
 
   create_table "components", force: true do |t|
     t.string  "model"
-    t.string  "cost"
-    t.string  "weight"
+    t.decimal "cost",              precision: 5, scale: 2, default: 0.0
+    t.integer "weight"
     t.integer "manufacturer_id"
-    t.integer "componet_type_id"
+    t.integer "component_type_id"
   end
 
-  add_index "components", ["componet_type_id"], name: "index_components_on_componet_type_id", using: :btree
+  add_index "components", ["component_type_id"], name: "index_components_on_component_type_id", using: :btree
   add_index "components", ["manufacturer_id"], name: "index_components_on_manufacturer_id", using: :btree
 
   create_table "manufacturers", force: true do |t|
