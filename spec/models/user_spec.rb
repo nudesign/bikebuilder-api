@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { have_db_column :name }
+  it { should have_many(:builds).class_name('Build') }
 end

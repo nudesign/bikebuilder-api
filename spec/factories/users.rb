@@ -2,10 +2,15 @@
 
 FactoryGirl.define do
   factory :user do
-    provider "MyString"
-    uid "MyString"
+
     name "MyString"
-    oauth_token "MyString"
-    oauth_expires_at "2013-10-07 20:40:28"
+    email "mystring@example.com"
+
+    trait :provider do
+      provider "MyString"
+      uid "MyString"
+      oauth_token "MyString"
+      oauth_expires_at "2013-10-07 20:40:28"
+    end
   end
 end
