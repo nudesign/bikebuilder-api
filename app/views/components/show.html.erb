@@ -1,0 +1,22 @@
+<h2>Componente: <%= @component.manufacturer.try(:name) %> <%= @component.model %></h2>
+
+<dl>
+  <dt>Fabricante</dt>
+  <dd><%= @component.manufacturer.try(:name) %></dd>
+
+  <dt>Tipo</dt>
+  <dd><%= @component.component_type.try(:name) %></dd>
+
+  <dt>Modelo</dt>
+  <dd><%= @component.model %></dd>
+</dl>
+
+<dl>
+  <dt>Peso</dt>
+  <dd><%= @component.weight %>g</dd>
+
+  <dt>Custo</dt>
+  <dd><%= number_to_currency @component.cost, unit: "R$", separator: ",", delimiter: ".", format: "%u %n" %></dd>
+</dl>
+
+<%= link_to "Editar componente", [:edit, @component] %>

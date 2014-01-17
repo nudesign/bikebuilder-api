@@ -1,0 +1,39 @@
+<%= form_for component do |f| %>
+
+  <fieldset>
+    <legend>Identificação</legend>
+
+    <fieldset>
+      <%= f.label :manufacturer_id %>
+      <%= f.select :manufacturer_id, Manufacturer.all.sort.collect{|m| [m.name, m.id]}, include_blank: "selecione" %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :component_type_id %>
+      <%= f.select :component_type_id, ComponentType.all.collect{|ct| [ct.name, ct.id]}, include_blank: "selecione" %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :model %>
+      <%= f.text_field :model %>
+    </fieldset>
+  </fieldset>
+
+  <fieldset>
+    <legend>Características</legend>
+
+    <fieldset>
+      <%= f.label :weight %>
+      <%= f.number_field :weight %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.label :cost %>
+      <%= f.number_field :cost %>
+    </fieldset>
+  </fieldset>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
