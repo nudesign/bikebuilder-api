@@ -1,0 +1,9 @@
+<h2>Fabricante: <%= @manufacturer.name %></h2>
+
+<dl>
+  <dt>Nome</dt>
+  <dd><%= @manufacturer.name %></dd>
+</dl>
+
+<%= link_to "Editar fabricante", [:edit, @manufacturer] %>
+<br><%= link_to "Listar frabricantes", [:manufacturers] %>

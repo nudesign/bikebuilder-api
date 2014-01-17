@@ -1,0 +1,16 @@
+<%= form_for manufacturer do |f| %>
+
+  <fieldset>
+    <legend>Identificação</legend>
+
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </fieldset>
+  
+  </fieldset>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

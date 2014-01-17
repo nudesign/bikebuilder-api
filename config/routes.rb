@@ -11,6 +11,7 @@ Bikebuilder::Application.routes.draw do
   resources :builds
   get "builds/new/:build_type_id", to: "builds#new", as: "new_build_with_type"
 
+  resources :manufacturers
   resources :components
   resources :component_types
   get "component_types/by_build/:build_type", to: "component_types#index", as: "component_types_by_build"
