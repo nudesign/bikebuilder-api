@@ -8,6 +8,14 @@ gem 'rails', '4.0.0'
 # gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'pg', '~> 0.17.1'
 
+# Assets
+gem 'sass-rails', '~> 4.0.0'
+gem 'bourbon', '~> 3.1.8'
+gem 'neat', '~> 1.4.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
+gem 'dispatcher-rails', github: 'tiagogodinho/dispatcher-rails'
+
 # To use Jbuilder templates for JSON
 gem 'jbuilder', '~> 1.5.1'
 
@@ -16,6 +24,8 @@ gem 'omniauth-facebook', '~> 1.4.1'
 
 
 group :development do
+  gem "annotate", "~> 2.6.1"
+
   # Guard
   gem 'guard',       '~> 1.8.1'
   gem 'guard-rspec', '~> 3.1.0'

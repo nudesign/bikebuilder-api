@@ -1,16 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-  respond_to :json
-
-  before_filter :set_default_response_format, :set_cors_policy
+  respond_to :html, :json
 
   helper_method :current_user
 
   protected
-    def set_default_response_format
-      request.format = :json if params[:format].nil?
-    end
-
     def set_cors_policy
       headers['Access-Control-Allow-Origin'] = '*'
       headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
