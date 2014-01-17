@@ -5,5 +5,10 @@
   <dd><%= @manufacturer.name %></dd>
 </dl>
 
+<dl>
+  <dt>Website</dt>
+  <dd><%= @manufacturer.website %></dd>
+</dl>
+
 <%= link_to "Editar fabricante", [:edit, @manufacturer] %>
 <br><%= link_to "Listar frabricantes", [:manufacturers] %>
