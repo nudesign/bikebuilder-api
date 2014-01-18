@@ -6,7 +6,7 @@
     <fieldset>
       <%= f.label :manufacturer_id %>
       <%= f.select :manufacturer_id, Manufacturer.all.sort.collect{|m| [m.name, m.id]}, include_blank: "selecione" %>
-      <br><%= link_to "Adicionar fabricante", [:new, :manufacturer] %>
+      <br><%= link_to "Criar fabricante", [:new, :manufacturer] %>
     </fieldset>
 
     <fieldset>
