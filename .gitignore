@@ -16,3 +16,4 @@
 /tmp
 .ruby-version
 .rvmrc
+.DS_Store
