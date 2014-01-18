@@ -1,0 +1,17 @@
+<h2>Tipo de componente: <%= @component_type.name %></h2>
+
+<dl>
+  <dt>Nome</dt>
+  <dd><%= @component_type.name %></dd>
+
+  <dt>Primário?</dt>
+  <dd><%= @component_type.primary? %></dd>
+</dl>
+
+<dl>
+  <dt>Tipos de build</dt>
+  <dd><%= @component_type.build_types.map(&:name).join(", ") %></dd>
+</dl>
+
+<%= link_to "Editar tipo de componente", [:edit, @component_type] %>
+<br><%= link_to "Listar tipos de componentes", [:component_types] %>

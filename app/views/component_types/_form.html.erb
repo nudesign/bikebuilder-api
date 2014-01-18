@@ -1,0 +1,31 @@
+<%= form_for component_type do |f| %>
+
+  <fieldset>
+    <legend>Identificação</legend>
+
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </fieldset>
+
+    <fieldset>
+      <%= f.check_box :primary %>
+      <%= f.label :primary %>
+    </fieldset>
+  </fieldset>
+
+  <fieldset>
+    <legend>Tipos de build</legend>
+
+    <fieldset>
+      <%= hidden_field_tag "component_type[build_type_ids][]", "" %>
+      <% BuildType.all.each do |build_type| # TODO: move to controller -%>
+        <label><%= check_box_tag "component_type[build_type_ids][]", build_type.id, component_type.build_type_ids.include?(build_type.id), id: dom_id(build_type, "component_type") %> <%= build_type.name %></label>
+      <% end -%>
+    </fieldset>
+  </fieldset>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
