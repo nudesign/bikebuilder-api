@@ -13,4 +13,6 @@ Bikebuilder::Application.routes.draw do
   resources :build_types
   resources :component_types
 
+  root "builds#index"
+
 end
