@@ -1,0 +1,101 @@
+.build-card {
+  @extend %list-item;
+  padding: 8px;
+}
+
+/* card image */
+.build-card-thumb-ctn {
+  float: left;
+  width: 50%;
+  margin-right: 8px;
+  overflow: auto;
+}
+.build-card-thumb {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+/* card info */
+.build-card-info {
+  .build-name {
+    @include tf_title;
+    @include ts_1;
+  }
+
+  .build-type {
+    @include tf_text;
+  }
+
+  .build-cost {
+    @include tf_text;
+    @include ts_1;
+  }
+
+  .build-weight {
+    @extend .build-cost;
+  }
+}
+
+/* card author */
+.build-card-author-ctn {
+  position: absolute;
+  left: 50%;
+  padding-left: 8px;
+  bottom: 8px;
+}
+.build-card-author-avatar {
+  float: left;
+  margin-right: 4px;
+}
+.build-card-author-header {
+  height: 16px;
+  overflow: hidden;
+  .build-card-author-name {
+    @include tf_text;
+  }
+}
+.build-card-author-stats-list {
+  @include clearfix;
+  height: 16px;
+  .build-card-author-stats-list-item {
+    background: url('../images/builder-stats-sprites.png') no-repeat;
+    color: $secondary-color;
+    float: left;
+    height: 13px;
+    margin-right: 12px;
+    padding-left: 24px;
+    &.build-card-author-stats-ride {
+      background-position: 0px 0px;
+    }
+    &.build-card-author-stats-build {
+      background-position: 0px -13px;
+    }
+  }
+}
+
+.build-card {
+  @include media($tablet-v) {
+
+    margin-top: 8px;
+    padding: 4px;
+    border-bottom: none;
+
+    .build-card-thumb-ctn {
+      float: none;
+      width: 100%;
+    }
+
+    .build-card-info {
+      padding-top: 8px;
+    }
+
+    .build-card-author-ctn {
+      position: static;
+      margin-top: 8px;
+      padding: 8px 0;
+      border-top: 1px solid $mid-border-color;
+    }
+
+  }
+}

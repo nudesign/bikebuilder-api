@@ -18,7 +18,29 @@
 </head>
 <body>
 
+<div class="container">
+  <header class="main-header">
+    <nav class="main-nav">
+      <h1 class="app-logo">
+        <%= link_to image_tag("bike-builder.png", alt: "BikeBuilder"), root_path %>
+      </h1>
+      <ul class="login-list">
+        <li class="login-label">
+          log in
+        </li>
+        <a href="">
+          <li class="login-list-item login-facebook">
+            facebook
+          </li>
+        </a>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<div class="container">
   <%= yield %>
+</div>
 
 </body>
 </html>

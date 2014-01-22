@@ -1,0 +1,18 @@
+.builds-filters-list {
+  @include span-columns(8);
+  @include omega;
+}
+
+.builds-filters-list-item {
+  @include ts_1;
+  @include tf_text;
+
+  display: inline;
+  float: left;
+  margin-right: 20px;
+  color: $inactive-color;
+  
+  &.is-active {
+    color: #f00;
+  }
+}

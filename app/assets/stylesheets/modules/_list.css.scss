@@ -1,0 +1,13 @@
+%list-item {
+  position: relative;
+  padding: 4px 4px 6px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid $light-border-color;
+  overflow: auto;
+}
+
+%list-header {
+  @extend %list-item;
+  border-bottom: 1px solid  $mid-border-color;
+}

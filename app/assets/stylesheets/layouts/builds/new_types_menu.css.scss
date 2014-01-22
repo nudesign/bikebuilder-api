@@ -1,0 +1,72 @@
+/* setup */
+.new-build-types-menu {
+  @include ts_1;
+  @include tf_text;
+}
+
+/* title */
+.new-build-types-menu-title {
+  @extend %list-item;
+  display: block;
+  background-color: #fff;
+
+  &:after {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+
+    content: "";
+    display: block;
+    height: 12px;
+    width: 8px;
+    margin-top: -6px;
+
+    background: url('/assets/ico-arrow_right.png') no-repeat;
+  }
+}
+
+/* list */
+.new-build-types-menu-list {
+  overflow: auto;
+  .block-link {
+    float: left;
+  }
+}
+
+.new-build-types-menu-item {
+  @include transition;
+
+  position: relative;
+  float: left;
+  
+  width: 84px;
+  height: 80px;
+
+  text-align: center;
+
+  overflow: auto;
+  
+}
+
+.new-build-types-menu-icon {
+
+  position: absolute;
+  top: 0;
+  left: 8px;
+
+  width: 64px;
+  padding: 56px 8px 8px;
+
+  background-image: url('/assets/build-types-sprite.png');
+  background-repeat: no-repeat;
+
+  &.build-type-road {
+    background-position: 0px 0px;
+  }
+  &.build-type-fixed {
+    background-position: -64px 0px;
+  }
+  &.build-type-city {
+    background-position: -128px 0px;
+  }
+}

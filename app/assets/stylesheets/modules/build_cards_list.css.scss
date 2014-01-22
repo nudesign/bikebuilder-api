@@ -1,0 +1,95 @@
+.build-cards-list {
+  @include clearfix;
+
+  @include media($tablet-v) {
+    padding: 0 16px;
+
+    .build-card {
+      @include span-columns(12);
+
+      &:nth-child(2n) {
+        @include omega;
+      }
+    }
+  }
+
+  @include media($tablet-h) {
+    .build-card {
+
+      @include span-columns(12 of 36);
+
+      &:nth-child(2n) {
+        @include span-columns(12 of 36);
+      }
+
+      &:nth-child(3n) {
+        @include omega;
+      }
+    }
+  }
+
+  @include media($desktop) {
+    .build-card {
+
+      @include span-columns(12 of 48);
+
+      &:nth-child(3n),
+      &:nth-child(2n) {
+        @include span-columns(12 of 48);
+      }
+
+      &:nth-child(4n) {
+        @include omega;
+      }
+    }
+  }
+
+  @include media($big-desktop) {
+    .build-card {
+
+      @include span-columns(12 of 60);
+
+      &:nth-child(4n),
+      &:nth-child(3n),
+      &:nth-child(2n) {
+        @include span-columns(12 of 60);
+      }
+
+      &:nth-child(5n) {
+        @include omega;
+      }
+    }
+  }
+
+  @include media($giant-desktop) {
+    .build-card {
+
+      @include span-columns(12 of 72);
+
+      &:nth-child(5n),
+      &:nth-child(4n),
+      &:nth-child(3n),
+      &:nth-child(2n) {
+        @include span-columns(12 of 72);
+      }
+
+      &:nth-child(6n) {
+        @include omega;
+      }
+    }
+  }
+}
+
+.build-cards-list-header {
+  @extend %list-item;
+
+  border-top: 1px solid $mid-border-color;
+  float: left;
+  padding: 4px 4px 6px;
+
+  .builds-list-title {
+    @include ts_1;
+    @include tf_text;
+    @include span-columns(2);
+  }
+}

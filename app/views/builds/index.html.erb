@@ -1,5 +1,48 @@
-<h2>Builds</h2>
+<section class="new-build-types-menu">
+  <label class="new-build-types-menu-title">
+    create a new build
+  </label>
 
-<%= render @builds -%>
+  <ul class="new-build-types-menu-list">
+    <a ui-sref="builds#new({ type: 'city' })" class="block-link">
+      <li class="new-build-types-menu-item">
+        <%= link_to "city", new_build_path(build_type: "city"), class: "new-build-types-menu-icon build-type-city" %>
+      </li>
+    </a>
+    <a ui-sref="builds#new({ type: 'road' })" class="block-link">
+      <li class="new-build-types-menu-item">
+        <%= link_to "road", new_build_path(build_type: "road"), class: "new-build-types-menu-icon build-type-road" %>
+      </li>
+    </a>
+    <a ui-sref="builds#new({ type: 'fixed_gear' })" class="block-link">
+      <li class="new-build-types-menu-item">
+        <%= link_to "fixie", new_build_path(build_type: "fixed gear"), class: "new-build-types-menu-icon build-type-fixed" %>
+      </li>
+    </a>
+  </ul>
+</section>
 
-<%= link_to "Criar build", [:new, :build] %>
+<section class="l-builds-index">
+
+  <header class="build-cards-list-header">
+    <h2 class="builds-list-title">
+      builds
+    </h2>
+    <ul class="builds-filters-list">
+      <li class="builds-filters-list-item is-active">
+        all
+      </li>
+      <li class="builds-filters-list-item is-inactive">
+        my
+      </li>
+      <li class="builds-filters-list-item is-inactive">
+        favorites
+      </li>
+    </ul>
+  </header>
+
+  <section class="build-cards-list">
+    <%= render @builds %>
+  </section>
+
+</section>

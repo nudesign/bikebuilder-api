@@ -1,0 +1,38 @@
+.l-new-build {
+  @include clearfix;
+
+  @include media($tablet-v) {
+    width: $tablet-v-width;
+  }
+
+  header {
+    @include clearfix;
+
+    height: 36px;
+    border-bottom: 1px solid $mid-border-color;
+    padding: 4px 0px 3px 0px;
+  }
+
+  .build-name {
+    @include span-columns(5);
+  }
+
+  .build-cost {
+    @include span-columns(3);
+  }
+
+  .build-weight {
+    @include span-columns(2);
+    @include omega;
+  }
+
+  .build-image {
+    @include span-columns(10);
+    @include omega;
+  }
+
+  .build-components {
+    clear: left;
+    border-top: 1px solid $mid-border-color;
+  }
+}

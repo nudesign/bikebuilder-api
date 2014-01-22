@@ -1,0 +1,25 @@
+/* FONT SIZES, STYLES AND FAMILIES */
+
+/* styles/families */
+@mixin tf_title($color: #000) {
+  color: $color;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+@mixin tf_text($color: #000) {
+  color: $color;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-weight: normal;
+}
+
+/* sizes */
+@mixin ts_1 {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@mixin ts_2 {
+  font-size: 12px;
+  line-height: 16px;
+}

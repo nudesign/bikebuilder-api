@@ -1,0 +1,28 @@
+.main-header {
+  @include ts_1;
+  @include tf_text;
+  background-color: #4D4D4D;
+  height: 52px;
+  .app-logo {
+    display: inline;
+    float: left;
+    margin: 0px;
+  }
+
+  .login-list {
+    float: right;
+    padding: 12px;
+    .login-label {
+      color: $inverse-color;
+      float: left;
+      padding: 6px 12px 0px;
+    }
+    .login-list-item {
+      background: url('../images/login-sprite.png') no-repeat;
+      float: left;
+      height: 28px;
+      text-indent: -9999px;
+      width: 28px;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+/* reset ------------------------------------------------------- */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* appwide --------------------------------------------------- */
+body {
+  background-color: #f2f2f2;
+  @include ts_1;
+  @include tf_text;
+}
+.is-hidden {
+  display: none;
+}
+
+a:link {
+  color: $main-color;
+  text-decoration: none;
+}
+a:visited {
+  color: $main-color;
+  text-decoration: none;
+}
+a:hover {
+  color: $main-color;
+  text-decoration: none;
+}
+a:active {
+  color: $main-color;
+  text-decoration: none;
+}
+.block-link {
+  display: block;
+  overflow: auto;
+}
+.ctn-link {
+  @extend .block-link;
+  height: 100%;
+  width: 100%;
+}

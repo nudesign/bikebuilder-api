@@ -1,1 +1,35 @@
-<p><%= build.build_type.name %> – <%= link_to build.name, build %> – <%= build.total_weight %>g <%= number_to_currency build.total_cost, unit: "R$", separator: ",", delimiter: ".", format: "%u %n" %> – <%= link_to "editar", [:edit, build] %></p>
+<article class="build-card">
+  <div class="build-card-thumb-ctn">
+    <%= link_to build do %><img src="images/build-ph.jpg" class="build-card-thumb"><% end %>
+  </div>
+
+  <hgroup class="build-card-info">
+    <h3 class="build-name">
+      <%= link_to build.name, build %>
+    </h3>
+    <h4 class="build-type">
+      <%= build.build_type.name %>
+    </h4>
+    <div class="build-card-subtitle build-cost">
+      <%= build.total_weight %>g | <%= number_to_currency build.total_cost, unit: "R$", separator: ",", delimiter: ".", format: "%u %n" %>
+    </div>
+  </hgroup>
+
+  <div class="build-card-author-ctn">
+    <img src="images/bike-builder-ph.jpg" class="build-card-author-avatar">
+    <ul class="build-card-author-stats-list">
+      <li class="build-card-author-stats-list-item build-card-author-stats-build">
+        4
+      </li>
+      <li class="build-card-author-stats-list-item build-card-author-stats-ride">
+        5
+      </li>
+    </ul>
+    <hgroup class="build-card-author-header">
+      <h4 class="build-card-author-name">
+        Bike builder name
+      </h4>
+    </hgroup>
+  </div>
+  <%= link_to "editar", [:edit, build] %>
+</article>

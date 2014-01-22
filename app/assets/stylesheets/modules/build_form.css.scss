@@ -1,0 +1,23 @@
+.build-form-header {
+  @extend %list-item;
+}
+.build-form-name {
+  float: left;
+  input {
+    @include ts_1;
+    @include tf_title;
+
+    border: none;
+    background-color: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.build-form-summary {
+  float: right;
+}
+
+.build-form {
+
+}
