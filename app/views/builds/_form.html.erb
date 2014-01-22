@@ -1,0 +1,46 @@
+<%= form_for build do |f| %>
+
+
+  <fieldset>
+    <legend>Identificação</legend>
+
+      <fieldset>
+        <%= f.label :build_type %>:
+        <%= @build_type.name %>
+        <%= f.hidden_field :build_type_id %>
+      </fieldset>
+
+      <fieldset>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </fieldset>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Componentes</legend>
+
+    <%= hidden_field_tag "build[component_ids][]", "" %>
+    <% @build_type.component_types.primary.each do |component_type| -%>
+      <fieldset>
+        <legend><%= component_type.name %></legend>
+        <%= select_tag "build[component_ids][]", options_for_select(component_type.components.collect{|component| [component.model, component.id]}, build.components.find_by(component_type_id: component_type.id).try(:id)), prompt: "selecione", id: dom_id(component_type, "build") %>
+      </fieldset>
+    <% end -%>
+
+    <fieldset>
+      <legend>Componentes Secundários</legend>
+
+      <% @build_type.component_types.secondary.each do |component_type| -%>
+        <fieldset>
+          <legend><%= component_type.name %></legend>
+          <%= select_tag "build[component_ids][]", options_for_select(component_type.components.collect{|component| [component.model, component.id]}, build.components.find_by(component_type_id: component_type.id).try(:id)), prompt: "selecione" %>
+        </fieldset>
+      <% end -%>
+    </fieldset>
+  </fieldset>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

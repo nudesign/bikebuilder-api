@@ -15,4 +15,12 @@ class Build < ActiveRecord::Base
   belongs_to :build_type
   has_and_belongs_to_many :components
 
+  def total_cost
+    components.inject(0){|sum, c| sum += c.cost.to_f }
+  end
+
+  def total_weight
+    components.inject(0){|sum, c| sum += c.weight.to_f }
+  end
+
 end

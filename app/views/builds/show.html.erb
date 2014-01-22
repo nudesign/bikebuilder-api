@@ -1,0 +1,16 @@
+<h2>Build: <%= @build.name %></h2>
+
+<dl>
+  <dt>Nome</dt>
+  <dd><%= @build.name %></dd>
+</dl>
+
+<% @build.components.each do |component| -%>
+<dl>
+  <dt><%= component.component_type.name %></dt>
+  <dd><%= component.manufacturer.try(:name) %> <%= component.model %></dd>
+</dl>
+<% end -%>
+
+<%= link_to "Editar build", [:edit, @build] %>
+<br><%= link_to "Listar builds", :builds %>

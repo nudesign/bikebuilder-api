@@ -1,0 +1,1 @@
+<p><%= build.build_type.name %> – <%= link_to build.name, build %> – <%= build.total_weight %>g <%= number_to_currency build.total_cost, unit: "R$", separator: ",", delimiter: ".", format: "%u %n" %> – <%= link_to "editar", [:edit, build] %></p>
